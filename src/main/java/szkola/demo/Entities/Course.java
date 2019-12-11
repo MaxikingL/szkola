@@ -1,17 +1,18 @@
 package szkola.demo.Entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Course")
 public class Course {
 
     @Id
     @GeneratedValue
     private long id;
 
+
+    @Column(name = "name", nullable = false)
     @GeneratedValue
     private String name;
 

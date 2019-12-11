@@ -14,6 +14,8 @@ import szkola.demo.Repository.CourseRepository;
 
 import javax.persistence.EntityManager;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -57,7 +59,7 @@ public class CourseRepositoryTest {
         courseRepository.save(course);
 
         //sprawdzamy wartość
-        Course course1 = courseRepository.findbyId(1000L);
+        Course course1 = courseRepository.findbyId(10001L);
         assertEquals("Tekstowo - update",course1.getName());
 
     }
@@ -78,10 +80,12 @@ public class CourseRepositoryTest {
         assertEquals("Tekstowo-insert",course1.getName());
     }
 
-    @Test
-    @DirtiesContext
-    public void PlayWithEntitiesManager(){
-        courseRepository.playWithEntitiesManager();
-    }
+//      @Test
+//    @DirtiesContext
+//    public void PlayWithEntitiesManager(){
+//        courseRepository.playWithEntitiesManager();
+//    }
+
+
 
 }

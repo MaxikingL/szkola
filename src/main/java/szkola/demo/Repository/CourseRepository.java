@@ -1,6 +1,6 @@
 package szkola.demo.Repository;
 
-import jdk.internal.jline.internal.TestAccessible;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import javax.transaction.Transactional;
 @Transactional
 public class CourseRepository {
 
-    @Autowired
+
     EntityManager em;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -38,19 +38,21 @@ public class CourseRepository {
         }
         return course;
     }
-    public void playWithEntitiesManager(){
-        logger.info("Jestem w metodzie playEntitiesManager");
-    }
-    public void playWithEM(){
-        Course course = new Course("TEEEEST");
-            em.persist(course);
-            course.setName("TEEEST - UPDATE");//zmiana zapisu
-
-    }
-    public void playWithEM2(){
-        Course course = new Course ("TEEEEST 2");
-        em.persist(course);
-        em.flush(); // Wymuszenie natychmiastowego zakończenia transakcji
-    }
+//    public void playWithEntitiesManager(){
+//        logger.info("Jestem w metodzie playEntitiesManager");
+//    }
+//    public void playWithEM(){
+//        Course course = new Course("TEEEEST");
+//            em.persist(course);
+//            course.setName("TEEEST - UPDATE");//zmiana zapisu
+//
+//
+//        Course course2 = new Course ("TEEEEST 2");
+//        em.persist(course2);
+//        em.flush(); // Wymuszenie natychmiastowego zakończenia transakcji
+//
+//        em.detach(course2);//koniec śledzzenia
+//        course2.setName("TEST 2 - UPDATE");// zmiana tylko na obiekcie - nie w bazie
+//    }
 
 }
